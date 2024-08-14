@@ -4,7 +4,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-import Navbar from "./components/navBar";
+import Navbar from "./components/NavBar";
 import SignUp from "./components/user/SignUp"
 import Login from "./components/user/Login";
 import { registerUser, LoginUser } from "./utils/utils";

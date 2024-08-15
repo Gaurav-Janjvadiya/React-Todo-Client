@@ -2,89 +2,44 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import authContext from "../contexts/contexts";
 import { Logout } from "../utils/utils";
+import "./NavBar.css";
 
 function Navbar() {
   const { currentUser, setCurrentUser } = useContext(authContext);
 
   return (
-    <nav
-      style={{
-        backgroundColor: "#303030",
-        padding: "16px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        borderBottom: "1px solid #424242",
-      }}
-    >
-      <ul
-        style={{
-          listStyleType: "none",
-          padding: 0,
-          display: "flex",
-          gap: "16px",
-        }}
-      >
+    <nav>
+      <ul>
         <li>
-          <Link
-            to="/todos"
-            style={{ color: "#fff", textDecoration: "none", fontSize: "16px" }}
-          >
-            Todo List
-          </Link>
+          <Link to="/todos">Todo List</Link>
         </li>
         <li>
-          <Link
-            to="/todos/new"
-            style={{ color: "#fff", textDecoration: "none", fontSize: "16px" }}
-          >
-            Add Todo
-          </Link>
+          <Link to="/todos/new">Add Todo</Link>
         </li>
+      </ul>
+      <div className="buttons">
         {!currentUser ? (
           <>
-            <li>
-              <Link
-                to="/login"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  fontSize: "16px",
-                }}
-              >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/signup"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  fontSize: "16px",
-                }}
-              >
-                SignUp
-              </Link>
-            </li>
+            <button className="button">
+              <Link to="/login">Login</Link>
+            </button>
+            <button className="button">
+              <Link to="/signup">SignUp</Link>
+            </button>
           </>
         ) : null}
         {currentUser ? (
-          <li
-            style={{
-              color: "#fff",
-              textDecoration: "none",
-              fontSize: "16px",
-            }}
+          <button
+            className="button"
             onClick={() => {
               Logout();
               setCurrentUser(null);
             }}
           >
             Logout
-          </li>
+          </button>
         ) : null}
-      </ul>
+      </div>
     </nav>
   );
 }

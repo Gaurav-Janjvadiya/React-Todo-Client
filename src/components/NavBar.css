@@ -1,0 +1,58 @@
+/* Base styles */
+nav {
+    background-color: rgb(52, 52, 52);
+    color: rgb(156, 156, 156);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgb(156, 156, 156);
+}
+
+a,
+button {
+    all: initial;
+    color: rgb(156, 156, 156);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10vw;
+}
+
+.button {
+    margin: 0px 10px;
+    border: 1px solid gray;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    ul {
+        width: auto;
+        flex-direction: column;
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+    .button {
+        margin: 10px 0;
+    }
+}

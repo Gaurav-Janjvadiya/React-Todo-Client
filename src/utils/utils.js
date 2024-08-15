@@ -15,7 +15,10 @@ const registerUser = (newUser) => {
 
 const LoginUser = async (newUser) => {
   try {
-    const res = await axios.post("https://tasknode-api.onrender.com/login", newUser);
+    const res = await axios.post(
+      "https://tasknode-api.onrender.com/login",
+      newUser
+    );
     return res.data;
   } catch (e) {
     console.log(e);

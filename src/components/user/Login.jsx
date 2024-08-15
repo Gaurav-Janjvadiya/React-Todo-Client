@@ -1,7 +1,6 @@
-import React from "react";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import authContext from "../../contexts/contexts";
-
+import "./Login.css";
 function Login({ onsubmit }) {
   const [user, setUser] = useState({ username: "", password: "" });
   const { setCurrentUser } = useContext(authContext);
@@ -18,7 +17,8 @@ function Login({ onsubmit }) {
   };
 
   return (
-    <div>
+   <div className="parent">
+     <div className="login-container">
       <form onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
@@ -36,9 +36,10 @@ function Login({ onsubmit }) {
           value={user.password}
         />
         <br />
-        <button>Login</button>
+        <button >Login</button>
       </form>
     </div>
+   </div>
   );
 }
 

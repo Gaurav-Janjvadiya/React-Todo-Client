@@ -1,5 +1,7 @@
+// TodoForm.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './TodoForm.css'; // Import the CSS file
 
 function TodoForm({
   onSubmit,
@@ -23,34 +25,22 @@ function TodoForm({
   };
 
   return (
-    <div style={{ backgroundColor: "#303030", padding: "16px", borderRadius: "8px" }}>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+    <div className="todo-form-container">
+      <form
+        onSubmit={handleSubmit}
+        className="todo-form"
+      >
         <input
           type="text"
           name="todo"
           value={inputValue}
           onChange={handleChange}
           placeholder={placeholder}
-          style={{
-            backgroundColor: "#424242",
-            color: "#fff",
-            padding: "8px",
-            border: "none",
-            borderRadius: "4px",
-            fontSize: "16px",
-          }}
+          className="todo-input"
         />
         <button
           type="submit"
-          style={{
-            backgroundColor: "#616161",
-            color: "#fff",
-            padding: "8px 16px",
-            border: "none",
-            borderRadius: "4px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
+          className="todo-button"
         >
           {buttonText}
         </button>

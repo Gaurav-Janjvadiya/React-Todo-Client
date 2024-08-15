@@ -1,0 +1,26 @@
+/* TodoList.css */
+
+.todosParent {
+    list-style-type: none;
+    padding: 2rem;
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.todo {
+    width: 100%;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: #505050;
+}
+
+.todo:hover {
+    background-color: #5e5e5e;
+}
